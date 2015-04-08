@@ -1,5 +1,5 @@
 {
   "name": "validate-first-run",
   "version": "0.0.1",
-  "main": "validateRunOnce.js",
+  "main": "validateRunOnce.js"
 }
