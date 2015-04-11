@@ -12,10 +12,10 @@ if (typeof validateFirstRun === 'undefined') {
         } catch (exception) {
             scriptBay = {};
         }
-        if (!isUndefined(scriptBay[scriptObject.src])) {
+        if (typeof (scriptBay[scriptObject.src]) !== 'undefined') {
             var errorEvent = { src: scriptObject.src };
             var listener = function(event) {
-                if (typeof event.error === 'object' && !isUndefined(event.error.src) && event.error.src === scriptObject.src) {
+                if (typeof event.error === 'object' && (typeof event.error.src !== 'undefined) && event.error.src === scriptObject.src) {
                     event.preventDefault();event.stopPropagation();
                     window.removeEventListener('error', listener, true);
                 }
@@ -45,10 +45,10 @@ if (typeof validateFirstNameSpaceRun === 'undefined') {
         } catch (exception) {
             nameSpaceObject.scriptBay = {};
         }
-        if (!isUndefined(nameSpaceObject.scriptBay[scriptObject.src])) {
+        if (typeof (nameSpaceObject.scriptBay[scriptObject.src]) !== 'undefined') {
             var errorEvent = { src: scriptObject.src };
             var listener = function(event) {
-                if (typeof event.error === 'object' && !isUndefined(event.error.src) && event.error.src === scriptObject.src) {
+                if (typeof event.error === 'object' && (typeof event.error.src !=='undefined') && event.error.src === scriptObject.src) {
                     event.preventDefault();event.stopPropagation();
                     window.removeEventListener('error', listener, true);
                 }
